@@ -1,13 +1,17 @@
 <h2>Faça seu registro</h2>
 
-<form action="users/register" method="POST">
+<form action="/users/register" method="POST">
   <div class="form-control">
-    <label for="title">Usuário:</label>
+    <label for="usuario">Usuário:</label>
     <input type="text" name="usuario" placeholder="nome de usuario">
   </div>
   <div class="form-control">
-    <label for="description">Senha:</label>
+    <label for="senha">Senha:</label>
     <input type="password" name="senha" placeholder="sua senha"></input>
+  </div>
+  <div class="form-control">
+    <label for="confirm">Confirmar Senha:</label>
+    <input type="password" name="confirmarsenha" placeholder="Repita sua senha"></input>
   </div>
   <input type="submit" value="Registar">
 </form>

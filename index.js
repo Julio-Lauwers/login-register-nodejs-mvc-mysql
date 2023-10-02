@@ -4,8 +4,7 @@ const app = express()
 const conn = require('./db/conn')
 const session = require('express-session')
 const bodyParser = require('body-parser')
-
-
+const flash = require('connect-flash')
 
 const User = require('./models/User')
 
@@ -17,9 +16,13 @@ app.set('view engine', 'handlebars' )
 // LOGIN / REGISTRO 
 app.use(session({
     secret:'asfsdgdsgadgh',
-    resave: true,
-    saveUninitialized: true
+    cookie: {masAge: 60000},
+    resave: false,
+    saveUninitialized: false
 }));
+
+app.use(flash())
+
 app.use(bodyParser.urlencoded({extended:true}))
 
 app.use(
